@@ -1,0 +1,11 @@
+{% block body %}
+    <h1>modification</h1>
+    <main>
+        <section>
+            {{form_start(form)}}
+            {{form_row(form.Nom)}}
+            <button type="submit">edit</button>
+            {{form_end(form)}}
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <H1>Nouvelle liste</H1>
+    <main>
+        <section>
+            <h1>Faire des listes</h1>
+            <article>
+                {% for list in lists %}
+                    <h2>{{list.Nom}}</h2>
+                    <div>
+                        <a href="{{ path('app_Liste_delete', {id: list.id})}}" class="bouton">delete</a>
+                    </div>
+                    <div>
+                        <a href="{{ path('app_Liste_edit', {id: list.id})}}" class="bouton">edit</a>
+                    </div>
+                {% else %}
+                    <p>Il n'y a pas encore de listes de choses à faire !!</p>
+                {% endfor %}
+                <a href="{{ path('app_Liste_creation')}}" class="bouton">Nouvelle Liste</a>
+            </article>
+        </section>
+    </main>
+{% endblock %}
